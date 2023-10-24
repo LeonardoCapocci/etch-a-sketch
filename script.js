@@ -14,14 +14,23 @@ function etchASketch(n=24) {
   const divCells = document.querySelectorAll(".cell");
   divCells.forEach((divCell) => {
     divCell.addEventListener('mouseover', () => {
-        divCell.style.backgroundColor = "red";
+        divCell.style.backgroundColor = 'black';
     })
   });
 }
 
 const sizeButton = document.querySelector("#size-button");
 sizeButton.addEventListener('click', () => {
-  container.innerHTML = "";
-  const newSize = parseInt(prompt("choose a size for the grid"));
-  etchASketch(newSize);
+  const newSize = parseInt(prompt("choose a size for the grid (0-100)"));
+  if (newSize > 0 && newSize <= 100) {
+    container.innerHTML = "";
+    etchASketch(newSize);
+  }
 })
+
+function getRandomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r},${g},${b})`;
+}

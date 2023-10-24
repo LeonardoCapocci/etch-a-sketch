@@ -21,7 +21,7 @@ function etchASketch(n=24) {
 
 const sizeButton = document.querySelector("#size-button");
 sizeButton.addEventListener('click', () => {
-  const newSize = parseInt(prompt("choose a size for the grid (0-100)"));
+  const newSize = parseInt(prompt("choose a size for the grid (1-100)"));
   if (newSize > 0 && newSize <= 100) {
     container.innerHTML = "";
     etchASketch(newSize);

@@ -5,11 +5,17 @@ html, body {
     overflow: hidden; /* Prevent scrollbars if content overflows */
   }
 
+.header {
+    text-align: center;
+}
+
 #container {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    align-items: stretch;
+    height: 960px;
+    width: 960px;
+    align-items: stretch; /* not sure if needed */
+    border: 1px solid black;
 }
 
 .row {

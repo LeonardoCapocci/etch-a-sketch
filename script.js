@@ -1,6 +1,6 @@
 const container = document.querySelector("#container");
 
-n = 16
+n = 100
 
 for (let i = 0; i < n; i++) {
   const divRow = document.createElement("div");
@@ -10,6 +10,12 @@ for (let i = 0; i < n; i++) {
     const divCell = document.createElement("div");
     divRow.appendChild(divCell);
     divCell.className = "cell";
-    divCell.textContent= "hi";
   }
 }
+
+const divCells = document.querySelectorAll(".cell");
+divCells.forEach((divCell) => {
+  divCell.addEventListener('mouseover', () => {
+      divCell.style.backgroundColor = "red";
+  })
+});
